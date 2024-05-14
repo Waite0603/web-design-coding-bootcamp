@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <title>Navbar #1</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-overlay" onclick="toggleMenuOpen()"></div>
+
+    <button type="button" class="navbar-burger" onclick="toggleMenuOpen()">
+      <span class="material-symbols-outlined">
+        menu
+      </span>
+    </button>
+
+    <h1 class="navbar-title">Waite HI</h1>
+
+    <nav class="navbar-menu">
+      <button type="button" class="active">Youtube</button>
+      <button type="button">Facebook</button>
+      <button type="button">Instagram</button>
+      <button type="button">Twitter</button>
+    </nav>
+  </nav>
+
+</body>
+
+<script>
+  const toggleMenuOpen = () => {
+    const open_flag = document.body.classList.contains('open');
+    const icon = document.querySelector('.navbar-burger .material-symbols-outlined');
+    icon.textContent = open_flag ? 'menu' : 'filter_list';
+    document.body.classList.toggle('open');
+  }
+</script>
+
+</html>
