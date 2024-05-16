@@ -121,9 +121,5 @@ h2 {
 }
 
 .tabs input:nth-child(3):checked~.content>.content-inner {
- 
- 
- 
-  
   translate: calc(0px - var(--tab-width) * 2) 0;
 }
