@@ -45,6 +45,10 @@ body.open .modal-overlay {
   animation: fade-in 1s forwards;
 }
 
+body.closed .modal-overlay {
+  animation: fade-out 1s forwards;
+}
+
 .modal {
   position: fixed;
   top: 50%;
@@ -69,6 +73,7 @@ body.closed .modal {
   opacity: 0;
   visibility: hidden;
   transform: translate(-50%, -50%);
+  animation: modal-out 1.5s forwards;
 }
 
 .modal h2 {
@@ -87,11 +92,36 @@ body.closed .modal {
   0% {
     scale: 0 0.005;
   }
+
   33% {
     scale: 1 0.005;
   }
-  66%, 100% {
+
+  66%,
+  100% {
     scale: 1 1;
+  }
+}
+
+@keyframes fade-out {
+
+  0%,
+  33% {
+    scale: 1 1;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  66% {
+    scale: 1 0.005;
+    opacity: 0.5;
+    visibility: visible;
+  }
+
+  100% {
+    scale: 0 0.005;
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -101,9 +131,24 @@ body.closed .modal {
     visibility: hidden;
     transform: translate(-50%, -30%);
   }
+
   100% {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes modal-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -30%);
   }
 }
